@@ -27,12 +27,13 @@ class MyRecyclerViewAdapter internal constructor(
     }
 
     // binds the data to the TextView in each row
+    //тут создаем текст вью
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int
     ) {
-        val animal = mData[position]
-        holder.myTextView.text = animal
+        val event = mData[position]
+        holder.myTextView.text = event
     }
 
     // total number of rows
@@ -43,7 +44,11 @@ class MyRecyclerViewAdapter internal constructor(
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
-        var myTextView: TextView = itemView.findViewById(R.id.tvAnimalName)
+
+        var myTextView: TextView = itemView.findViewById(R.id.tvEvent)
+
+
+
         override fun onClick(view: View?) {
             if (mClickListener != null) mClickListener!!.onItemClick(view, adapterPosition)
         }

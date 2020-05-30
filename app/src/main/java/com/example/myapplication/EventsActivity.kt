@@ -16,39 +16,28 @@ import kotlin.collections.ArrayList
 
 class EventsActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListener {
     private var adapter: MyRecyclerViewAdapter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)
-//кнопка назад
+
+        //кнопка назад
         val actionBar: ActionBar? = supportActionBar
         actionBar?.setHomeButtonEnabled(true)
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-
-        /*val event1 = findViewById<TextView>(R.id.Event1)
-        event1.setText("Июнь, гп Северо-Енисейский, экологический квест Экобитва\nМесто проведение: МЦ Аурум")*/
-
-        // data to populate the RecyclerView with
-
-        // data to populate the RecyclerView with
-
-        var arrayOfDates: ArrayList<String> = ArrayList()
-        arrayOfDates = readData(arrayOfDates)
-/*        val iS = assets.open("testText.csv")
-        val sc = Scanner(iS, "cp1251")
-
-        arrayOfDates.add(sc.nextLine())
-        sc.close()*/
-
-        // set up the RecyclerView
+        //массив событий событий
+        var arrayOfEvents: ArrayList<String> = ArrayList()
+        arrayOfEvents = readData(arrayOfEvents)
+        //вывод списком событий
         val recyclerView: RecyclerView = findViewById(R.id.rvEvents)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MyRecyclerViewAdapter(this, arrayOfDates)
+        adapter = MyRecyclerViewAdapter(this, arrayOfEvents)
         adapter!!.setClickListener(this)
         recyclerView.adapter = adapter
         
     }
-//для кнопки назад
+    //событие для нажатия кнопки назад
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
@@ -58,6 +47,7 @@ class EventsActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListe
             else -> super.onOptionsItemSelected(item)
         }
     }
+    //событие для нажатия на содержимое recycler - новость
     override fun onItemClick(view: View?, position: Int) {
         Toast.makeText(
             this,
@@ -65,18 +55,18 @@ class EventsActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListe
             Toast.LENGTH_SHORT
         ).show()
     }
-
-    fun readData(arrayOfData: ArrayList<String>):ArrayList<String> {
+    //функция считывания информации из файла и перенос в список
+    private fun readData(arrayOfEvents: ArrayList<String>):ArrayList<String> {
         //AssetManager am = activity.getAssets()
         val iS = assets.open("events.csv")
         val sc = Scanner(iS, "cp1251")
-        //var line
+
         while (sc.hasNext()) {
             //var lines = sc.nextLine().split(";").toTypedArray()
-            arrayOfData.add(sc.nextLine())
+            arrayOfEvents.add(sc.nextLine())
         }
-        return arrayOfData
-        //val strs = "name, 2012, 2017".split(",").toTypedArray()
+
+        return arrayOfEvents
     }
 
 }
