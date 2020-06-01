@@ -4,16 +4,18 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.recyclerview_row.view.*
 
 
 class MyRecyclerViewAdapter internal constructor(
     context: Context?,
-    data: List<String>
+    data: ArrayList<Event>
 ) :
     RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
-    private val mData: List<String>
+    private val mData: List<Event>
     private val mInflater: LayoutInflater
     private var mClickListener: ItemClickListener? = null
 
@@ -33,8 +35,9 @@ class MyRecyclerViewAdapter internal constructor(
         position: Int
     ) {
         val event = mData[position]
-        holder.myTextView.text = event
-        holder.myTextView
+        holder.tvEventCaption.text = event.caption
+        holder.tvEventInfo.text = event.info
+        holder.ivEventDate.setImageResource(event.date)
     }
 
     // total number of rows
@@ -45,9 +48,10 @@ class MyRecyclerViewAdapter internal constructor(
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
-
-        var myTextView: TextView = itemView.findViewById(R.id.tvEvent_info)
-
+        //super(itemView)
+        var tvEventCaption: TextView = itemView.tvEvent_caption
+        var tvEventInfo: TextView = itemView.tvEvent_info
+        var ivEventDate: ImageView = itemView.findViewById(R.id.ivEvent_photo)
 
 
         override fun onClick(view: View?) {
@@ -60,7 +64,7 @@ class MyRecyclerViewAdapter internal constructor(
     }
 
     // convenience method for getting data at click position
-    fun getItem(id: Int): String {
+    fun getItem(id: Int): Event {
         return mData[id]
     }
 
