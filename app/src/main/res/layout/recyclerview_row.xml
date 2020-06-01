@@ -11,19 +11,41 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardEvent"
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardUseCompatPadding="true"
-        app:cardCornerRadius="5dp" >
-        <TextView
-            android:id="@+id/tvEvent"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp" />
+            android:padding="16dp"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ivEvent_photo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEvent_caption"
+                android:layout_toRightOf="@+id/ivEvent_photo"
+                android:layout_alignParentTop="true"
+                android:textSize="30sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEvent_info"
+                android:layout_toRightOf="@+id/ivEvent_photo"
+                android:layout_below="@+id/tvEvent_caption"
+                />
+
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

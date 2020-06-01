@@ -1,0 +1,59 @@
+[33mcommit e6dac7a3474b3908766abd6bc0341f25546a69bf[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Sat May 30 20:40:47 2020 +0300
+
+    add_textview_to_container
+
+[33mcommit f6861d8683dad4b9249c5e5956d211127a920199[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Sat May 30 14:53:19 2020 +0300
+
+    add_events_recycler_scroll_bar
+
+[33mcommit 4a85070965753771d60ffb624a9ba6b1ff4cd384[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Fri May 29 17:35:35 2020 +0300
+
+    -a
+
+[33mcommit 6e4935546a697bad987ce59b8718701f5a63a9d4[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Fri May 29 15:20:57 2020 +0300
+
+    add_recycler_animals_full
+
+[33mcommit 350d547941e91b8b6101a03068961ecf4d94733f[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Fri May 29 15:14:40 2020 +0300
+
+    add_recycler_animals
+
+[33mcommit bebd4d6f38d2a85076b8ff968dad70d7f1c22075[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Fri May 29 14:45:56 2020 +0300
+
+    add_home_button
+
+[33mcommit 3c8c18c28c41adae22f6797f13a8988e8affb33b[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Thu May 28 17:08:29 2020 +0300
+
+    Aurum_commit_3
+
+[33mcommit 6361a59091ee87394dff12df41cf9b453a16aa28[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Thu May 28 14:49:57 2020 +0300
+
+    add png file
+
+[33mcommit ac06bdbf3a47c639c1c6e4fe03e9f537ea70e222[m[33m ([m[1;33mtag: v1.0.0[m[33m)[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Thu May 28 14:42:53 2020 +0300
+
+    Aurum_commit_2
+
+[33mcommit d2a595690c8fe1ad56178cdf72e1a8ae1166e5ac[m
+Author: Apelsinovich <anejibcuh4uk@gmail.com>
+Date:   Thu May 28 11:05:36 2020 +0300
+
+    Aurum_commit_1

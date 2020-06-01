@@ -34,6 +34,7 @@ class MyRecyclerViewAdapter internal constructor(
     ) {
         val event = mData[position]
         holder.myTextView.text = event
+        holder.myTextView
     }
 
     // total number of rows
@@ -45,7 +46,7 @@ class MyRecyclerViewAdapter internal constructor(
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
 
-        var myTextView: TextView = itemView.findViewById(R.id.tvEvent)
+        var myTextView: TextView = itemView.findViewById(R.id.tvEvent_info)
 
 
 
