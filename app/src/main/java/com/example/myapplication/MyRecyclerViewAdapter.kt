@@ -38,6 +38,7 @@ class MyRecyclerViewAdapter internal constructor(
         holder.tvEventCaption.text = event.caption
         holder.tvEventInfo.text = event.info
         holder.ivEventDate.setImageResource(event.date)
+        holder.tvEventExpand_info.text = event.info
     }
 
     // total number of rows
@@ -52,6 +53,7 @@ class MyRecyclerViewAdapter internal constructor(
         var tvEventCaption: TextView = itemView.tvEvent_caption
         var tvEventInfo: TextView = itemView.tvEvent_info
         var ivEventDate: ImageView = itemView.findViewById(R.id.ivEvent_photo)
+        var tvEventExpand_info: TextView = itemView.tvEventExpand_info
 
 
         override fun onClick(view: View?) {

@@ -1,13 +1,20 @@
 package com.example.myapplication
 
+import android.R.attr.button
+import android.os.Build
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.recyclerview_row.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -16,6 +23,7 @@ class EventsActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListe
     private var adapter: MyRecyclerViewAdapter? = null
     private var arrayOfEvents: ArrayList<Event> = ArrayList()
 
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)
@@ -33,7 +41,9 @@ class EventsActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListe
         adapter = MyRecyclerViewAdapter(this, arrayOfEvents)
         adapter!!.setClickListener(this)
         recyclerView.adapter = adapter
-        
+
+
+
     }
     //событие для нажатия кнопки назад
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -47,6 +57,28 @@ class EventsActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListe
     }
     //событие для нажатия на содержимое recycler - новость
     override fun onItemClick(view: View?, position: Int) {
+/*        expandBtn.setOnClickListener{
+            if (expandEvent.visibility == View.GONE) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    TransitionManager.beginDelayedTransition(cardEvent, AutoTransition())
+                }
+                expandEvent.visibility = View.VISIBLE
+                expandBtn.text = "COLLAPSE"
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    TransitionManager.beginDelayedTransition(cardEvent, AutoTransition())
+                }
+                expandEvent.visibility = View.GONE
+                expandBtn.text = "EXPAND"
+            }
+
+        }*/
+        if (expandEvent.visibility == View.GONE) {
+            expandEvent.visibility = View.VISIBLE
+        } else {
+            expandEvent.visibility = View.GONE
+        }
+
         Toast.makeText(
             this,
             "You clicked " + adapter!!.getItem(position) + " on row number " + position,
@@ -61,24 +93,9 @@ class EventsActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListe
 
         while (sc.hasNext()) {
             var lines1 = sc.nextLine().split(";").toTypedArray()
-            //var lines2= lines1.get(0)
-            //var lines3= lines1.get(1)
-            //var lines4= lines1.get(2)
-            //println("GOGO " + lines2)
-            //println("GOGO " + lines3)
-            //println("GOGO " + lines4)
-           //var lines = sc.nextLine()
 
-            arrayOfEvents.add(Event(lines1[0], lines1[1], R.drawable.date))
-            //var event :Event(lines[0] lines[1], lines[2])
-
-            //var event: Event()
-            //event = Event(lines[0], lines[1], lines[2])
-           // arrayOfEvents.add()
-
+            arrayOfEvents.add(Event(lines1[0], lines1[1], R.drawable.date, lines1[1]))
         }
-
         return arrayOfEvents
     }
-
 }

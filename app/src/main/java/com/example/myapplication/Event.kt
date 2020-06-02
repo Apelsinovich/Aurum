@@ -5,7 +5,8 @@ import android.widget.ImageView
 class Event(
     var caption: String,
     var info: String,
-    var date: Int
+    var date: Int,
+    var expandInfo: String
 ) {
 // This method creates an ArrayList that has three Person objects
 // Checkout the project associated with this tutorial on Github if
