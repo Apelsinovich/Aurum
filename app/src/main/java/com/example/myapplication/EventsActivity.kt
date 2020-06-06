@@ -30,7 +30,7 @@ class EventsActivity : AppCompatActivity(){
         //вывод списком событий
         val recyclerView: RecyclerView = findViewById(R.id.rvEvents)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = Adapter(this, arrayOfEvents)
+        val adapter = Adapter(arrayOfEvents)
         recyclerView.adapter = adapter
 
     }
@@ -54,7 +54,7 @@ class EventsActivity : AppCompatActivity(){
         while (sc.hasNext()) {
             var lines1 = sc.nextLine().split(";").toTypedArray()
 
-            arrayOfEvents.add(Event(lines1[0], lines1[1], R.drawable.date, lines1[1]))
+            arrayOfEvents.add(Event(lines1[0], lines1[1], R.drawable.date, lines1[2]))
         }
         return arrayOfEvents
     }

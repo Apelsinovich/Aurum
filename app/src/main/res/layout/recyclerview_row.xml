@@ -58,7 +58,6 @@
                     android:id="@+id/tvEventExpand_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Blablalbalfsdlfsdflsdflsdflsdsd"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="18dp"

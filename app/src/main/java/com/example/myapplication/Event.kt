@@ -1,16 +1,11 @@
 package com.example.myapplication
-
-import android.widget.ImageView
-
+/***
+ * Класс события/новости молодежного центра Аурум. Каждый объект такого класса создается динамически
+ ***/
 class Event(
-    var caption: String,
-    var info: String,
-    var date: Int,
-    var expandInfo: String
-) {
-// This method creates an ArrayList that has three Person objects
-// Checkout the project associated with this tutorial on Github if
-// you want to use the same images.
-
-
-}
+    var caption: String,            //Заголовок новости/события
+    var info: String,               //Мини информация под заголовком о событии
+    var date: Int,                  //Дата события, на данный момент это id картинки (для теста). В планах подгружать динмаичски картинку-дату
+    var expandableInfo: String,     //Более полная информация о событии, которая изначально скрыта. По кнопке можно раскрыть в том же окне.
+    var expanded: Boolean = false   //Флаг означающий что подробная информация expandableInfo скрыта по умолчанию
+) {}
