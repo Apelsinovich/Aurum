@@ -21,20 +21,21 @@
             android:padding="16dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/ivEvent_photo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="center"/>
-
             <TextView
                 android:id="@+id/tvEvent_caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:layout_marginStart="18dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="18dp"/>
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/ivEvent_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center" />
 
             <TextView
                 android:id="@+id/tvEvent_info"

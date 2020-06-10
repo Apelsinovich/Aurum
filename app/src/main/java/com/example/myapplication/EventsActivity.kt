@@ -52,9 +52,9 @@ class EventsActivity : AppCompatActivity(){
         val sc = Scanner(iS, "cp1251")
 
         while (sc.hasNext()) {
-            var lines1 = sc.nextLine().split(";").toTypedArray()
+            val lines = sc.nextLine().split(";").toTypedArray()
 
-            arrayOfEvents.add(Event(lines1[0], lines1[1], R.drawable.date, lines1[2]))
+            arrayOfEvents.add(Event(caption = lines[0], info = lines[1], image = R.drawable.sword2, detailedInfo = lines[2]))
         }
         return arrayOfEvents
     }

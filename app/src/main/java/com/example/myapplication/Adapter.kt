@@ -21,6 +21,13 @@ class Adapter internal constructor(
     RecyclerView.Adapter<Adapter.ViewHolder>() {
     private val buttonNameExpanded: String = "Подробнее"
     private val buttonNameNotExpanded: String = "Скрыть"
+/*    init {
+        setHasStableIds(true)
+    }*/
+
+
+
+
 
     // inflates the row layout from xml when needed
     override fun onCreateViewHolder(
@@ -40,8 +47,9 @@ class Adapter internal constructor(
         val event = data[position]
         holder.eventCaption.text = event.caption
         holder.eventInfo.text = event.info
-        holder.eventDate.setImageResource(event.date)
-        holder.eventExpandableInfo.text = event.expandableInfo
+        //holder.eventDate.setImageResource(event.date)
+        holder.eventExpandableInfo.text = event.detailedInfo
+        holder.eventImage.setImageResource(event.image)
 
         //Ниже код связан с раскрытием CardView
         val isExpanded: Boolean = data[position].expanded
@@ -65,20 +73,15 @@ class Adapter internal constructor(
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
         //super(itemView)
-        var eventCaption: TextView
-        var eventInfo: TextView
-        var eventDate: ImageView
-        var eventExpandableInfo: TextView
-        var eventExpandableLayer: LinearLayout
-        var eventButton: Button
-        //var tvEventExpand_info: TextView = itemView.tvEventExpand_info
+        var eventCaption: TextView = itemView.findViewById(R.id.tvEvent_caption)
+        var eventInfo: TextView = itemView.findViewById(R.id.tvEvent_info)
+        //var eventDate: ImageView
+        var eventExpandableInfo: TextView = itemView.findViewById(R.id.tvEventExpand_info)
+        var eventExpandableLayer: LinearLayout = itemView.findViewById(R.id.expandEvent)
+        var eventButton: Button = itemView.findViewById(R.id.expandBtn)
+        var eventImage: ImageView = itemView.findViewById(R.id.ivEvent_photo)
+        //var rv: RecyclerView = itemView.findViewById(R.id.rvEvents)
         init {
-            eventCaption = itemView.findViewById(R.id.tvEvent_caption)
-            eventInfo = itemView.findViewById(R.id.tvEvent_info)
-            eventDate = itemView.findViewById(R.id.ivEvent_photo)
-            eventExpandableInfo = itemView.findViewById(R.id.tvEventExpand_info)
-            eventExpandableLayer = itemView.findViewById(R.id.expandEvent)
-            eventButton = itemView.findViewById(R.id.expandBtn)
 
             eventButton.setOnClickListener {
                 val event: Event = data[adapterPosition]
@@ -87,4 +90,5 @@ class Adapter internal constructor(
             }
         }
     }
+
 }
