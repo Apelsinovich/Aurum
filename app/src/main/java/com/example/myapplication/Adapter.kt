@@ -1,9 +1,5 @@
 package com.example.myapplication
 
-/***
- *Класс адаптер. Adapter необходим для управления View, заполнением View, определением объектов (кнопки, TextView и т.д.)
- ***/
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.recyclerview_row.view.*
 
 
 class Adapter internal constructor(
@@ -21,13 +18,6 @@ class Adapter internal constructor(
     RecyclerView.Adapter<Adapter.ViewHolder>() {
     private val buttonNameExpanded: String = "Подробнее"
     private val buttonNameNotExpanded: String = "Скрыть"
-/*    init {
-        setHasStableIds(true)
-    }*/
-
-
-
-
 
     // inflates the row layout from xml when needed
     override fun onCreateViewHolder(
@@ -45,24 +35,25 @@ class Adapter internal constructor(
         position: Int
     ) {
         val event = data[position]
-        holder.eventCaption.text = event.caption
-        holder.eventInfo.text = event.info
-        //holder.eventDate.setImageResource(event.date)
-        holder.eventExpandableInfo.text = event.detailedInfo
-        holder.eventImage.setImageResource(event.image)
-
+        holder.caption.text = event.caption
+        holder.info.text = event.info
+        holder.image.setImageDrawable(event.image)
+        holder.detailedInfo.text = event.detailedInfo
+        ////////////////////////
         //Ниже код связан с раскрытием CardView
         val isExpanded: Boolean = data[position].expanded
         //holder.eventExpandableLayer.setVisibility(if (isExpanded) else View.GONE)
 
-           if (isExpanded) {
+        if (isExpanded) {
             holder.eventButton.text = buttonNameNotExpanded
             holder.eventExpandableLayer.visibility = View.VISIBLE
         }
-            else {
+        else {
             holder.eventButton.text = buttonNameExpanded
             holder.eventExpandableLayer.visibility = View.GONE
-            }
+        }
+
+
     }
 
     // total number of rows
@@ -73,16 +64,16 @@ class Adapter internal constructor(
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
         //super(itemView)
-        var eventCaption: TextView = itemView.findViewById(R.id.tvEvent_caption)
-        var eventInfo: TextView = itemView.findViewById(R.id.tvEvent_info)
-        //var eventDate: ImageView
-        var eventExpandableInfo: TextView = itemView.findViewById(R.id.tvEventExpand_info)
-        var eventExpandableLayer: LinearLayout = itemView.findViewById(R.id.expandEvent)
+        var caption: TextView = itemView.tvEventCaption
+        var info: TextView = itemView.tvEventInfo
+       // var ivEventDate: ImageView = itemView.findViewById(R.id.ivEvent_photo)
+        var image: ImageView = itemView.findViewById(R.id.ivEventImage)
+        var detailedInfo: TextView = itemView.tvEventdetailedInfo
+        //var tvEventExpand_info: TextView = itemView.tvEventExpand_info
         var eventButton: Button = itemView.findViewById(R.id.expandBtn)
-        var eventImage: ImageView = itemView.findViewById(R.id.ivEvent_photo)
-        //var rv: RecyclerView = itemView.findViewById(R.id.rvEvents)
-        init {
+        var eventExpandableLayer: LinearLayout = itemView.findViewById(R.id.expandEvent)
 
+        init {
             eventButton.setOnClickListener {
                 val event: Event = data[adapterPosition]
                 event.expanded = !event.expanded
