@@ -37,7 +37,7 @@ class Adapter internal constructor(
         val event = data[position]
         holder.caption.text = event.caption
         holder.info.text = event.info
-        holder.image.setImageDrawable(event.image)
+        //holder.image.setImageDrawable(event.image)
         holder.detailedInfo.text = event.detailedInfo
         ////////////////////////
         //Ниже код связан с раскрытием CardView

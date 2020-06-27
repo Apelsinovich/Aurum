@@ -57,7 +57,7 @@ class EventsActivity : AppCompatActivity(){
             println(lines[1])
             println(lines[2])
             println(lines[3])
-            arrayOfEvents.add(Event(caption = lines[0], info = lines[1], image = getDrawableFromAssets(lines[3]), detailedInfo = lines[2], expanded = false))
+           // arrayOfEvents.add(Event(caption = lines[0], info = lines[1], image = getDrawableFromAssets(lines[3]), detailedInfo = lines[2], expanded = false))
         }
         return arrayOfEvents
     }

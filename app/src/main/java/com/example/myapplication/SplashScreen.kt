@@ -15,7 +15,7 @@ class SplashScreen : AppCompatActivity() {
 
         Handler().postDelayed({
             //.setProgressTintList(ColorStateList.valueOf(Color.red);
-            startActivity(Intent(this, EventsActivity::class.java))
+            startActivity(Intent(this, EventListActivity::class.java))
             //sleep(5000)
             finish()
         }, SPLASH_TIME_OUT)

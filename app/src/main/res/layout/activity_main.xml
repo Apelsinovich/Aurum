@@ -1,74 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#88CECECE"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="153dp"
-        android:layout_height="47dp"
-        android:ems="10"
-        android:inputType="phone"
-        android:text="8(39160)21-9-30"
-        android:textStyle="bold"
-        android:textColor="@color/colorOrange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_naviagtion"/>
 
-    <ImageView
-        android:id="@+id/buttonEvent"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_naviagtion"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071"
-        app:srcCompat="@drawable/image_aurum_events_icon" />
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menu"
+        android:background="@color/colorOrange"
+        />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="120dp"
-        android:layout_height="32dp"
-        android:text="СОБЫТИЯ"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEvent"
-        app:layout_constraintVertical_bias="0.018" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
-        app:layout_constraintStart_toEndOf="@+id/buttonEvent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_aurum_contact_icon" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="120dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="8dp"
-        android:text="КОНТАКТЫ"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+</RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
