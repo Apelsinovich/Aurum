@@ -25,7 +25,8 @@ class EventListFragment : Fragment() {
 
         //Заменить на класс,в котором создастся список
 
-        arrayOfEvents.add(Event("qwerty", "qwett", "qwerty"))
+        arrayOfEvents.add(Event("Флешмоб \"#БытьМамойЭто\"\n" +
+                "Что такое быть мамой и какие горизонты нам открывает материнство?", "8 июня - 20 июня", "qwerty"))
         arrayOfEvents.add(Event("qwerty222", "qwet222t", "qwerty22"))
         arrayOfEvents.add(Event("sdfsfsdfasf", "qafsfddsft", "asdfasdf"))
         arrayOfEvents.add(Event("qwertaaaaay222", "qwaaaat", "qasdf"))

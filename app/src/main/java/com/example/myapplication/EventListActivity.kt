@@ -45,6 +45,4 @@ class EventListActivity : AppCompatActivity() {
                 return true
             }
         }
-
-
 }

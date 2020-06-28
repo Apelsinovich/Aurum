@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">МЦ Аурум</string>
+    <!--Нижнее меню-->
     <string name="home">Home</string>
     <string name="contacts">Контакты</string>
+    <!--Контакты-->
+    <string name="choice_social">Свяжитесь с нами удобным способом:</string>
+
+    <string name="map">Мы на карте:</string>
+    <string name="coordinates">60.378265, 93.031372</string>
+
+    <string name="administration">Администрация:</string>
+    <string name="email_administration">adm@mcaurum.ru</string>
+
+    <string name="support">Техническая поддержка:</string>
+    <string name="email_itsupport">itsupport@mcaurum.ru</string>
 </resources>

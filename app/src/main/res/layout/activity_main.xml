@@ -11,20 +11,19 @@
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_naviagtion"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_above="@id/bottom_naviagtion"
+        android:background="@drawable/shadow"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_naviagtion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu"
-        android:background="?android:attr/windowBackground"
-
-        />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_above="@id/bottom_naviagtion"
-        android:background="@drawable/shadow"/>
+        android:background="?android:attr/windowBackground" />
 
 </RelativeLayout>
 

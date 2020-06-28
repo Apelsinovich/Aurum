@@ -19,33 +19,46 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
-            android:orientation="vertical">
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_margin="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvEventCaption"
                 android:text="14 июля"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:layout_gravity="end"
+                android:layout_width="245dp"
+                android:layout_height="130dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_gravity="start"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#88888888"
-                android:layout_marginTop="15dp"
+
+            <TextView
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
                 />
+            <!--           <View
+                           android:layout_width="match_parent"
+                           android:layout_height="0.5dp"
+                           android:background="#88888888"
+                           android:layout_marginTop="15dp"
+                           />-->
 
             <ImageView
                 android:id="@+id/ivEventImage"
-                android:layout_width="360dp"
-                android:layout_height="360dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ev2" />
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ev1" />
+
+        </LinearLayout>
+
 
             <TextView
                 android:id="@+id/tvEventInfo"
