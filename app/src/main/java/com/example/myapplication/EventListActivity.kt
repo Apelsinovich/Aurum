@@ -37,7 +37,6 @@ class EventListActivity : AppCompatActivity() {
                     R.id.bottom_home -> selectedFragment = HomeFragment()
                     R.id.bottom_events -> selectedFragment = EventListFragment()
                     R.id.bottom_contacts -> selectedFragment = ContactsFragment()
-//                    R.id.nav_search -> selectedFragment = SearchFragment()
                 }
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container,

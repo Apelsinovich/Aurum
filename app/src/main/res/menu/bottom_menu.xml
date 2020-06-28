@@ -2,20 +2,21 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <item
         android:id="@+id/bottom_home"
-        android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:icon="@drawable/home_selector"
+        android:title="Главная" />
 
     <item
         android:id="@+id/bottom_events"
-        android:icon="@drawable/ic_events"
-        android:title="Events" />
+        android:icon="@drawable/events_selector"
+        android:title="События" />
 
     <item
         android:id="@+id/bottom_contacts"
-        android:icon="@drawable/ic_contacts"
-        android:title="Contacts" />
+        android:icon="@drawable/contacts_selector"
+        android:title="Контакты" />
 
 
 
