@@ -1,12 +1,14 @@
-package com.example.myapplication
+package com.example.myapplication.activities
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.adapters.EventArchiveListFragmentAdapter
+import com.example.myapplication.models.Event
+import com.example.myapplication.R
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -30,7 +32,7 @@ class EventsActivity : AppCompatActivity(){
         //вывод списком событий
         val recyclerView: RecyclerView = findViewById(R.id.rvEvents)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = Adapter(arrayOfEvents)
+        val adapter = EventArchiveListFragmentAdapter(arrayOfEvents)
         recyclerView.adapter = adapter
 
     }

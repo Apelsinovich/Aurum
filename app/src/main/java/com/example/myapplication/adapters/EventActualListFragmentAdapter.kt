@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +8,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.recyclerview_row.view.*
+import com.example.myapplication.models.Event
+import com.example.myapplication.R
+import kotlinx.android.synthetic.main.fragment_event.view.*
 
-
-class Adapter internal constructor(
+class EventActualListFragmentAdapter internal constructor(
     //private var context: Context,
     private var data: ArrayList<Event>
 ) :
-    RecyclerView.Adapter<Adapter.ViewHolder>() {
+    RecyclerView.Adapter<com.example.myapplication.adapters.EventActualListFragmentAdapter.ViewHolder>() {
     private val buttonNameExpanded: String = "Подробнее"
     private val buttonNameNotExpanded: String = "Скрыть"
 
@@ -24,7 +25,7 @@ class Adapter internal constructor(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_row, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.fragment_event, parent, false)
         return ViewHolder(view)
     }
 

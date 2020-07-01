@@ -1,9 +1,12 @@
-package com.example.myapplication
+package com.example.myapplication.activities
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.myapplication.R
+import com.example.myapplication.fragments.EventFragment
+import com.example.myapplication.fragments.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -36,9 +39,10 @@ class MainActivity : AppCompatActivity() {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 var selectedFragment: Fragment? = null
                 when (item.itemId) {
-                    R.id.bottom_home -> selectedFragment = HomeFragment()
-                    R.id.bottom_events -> selectedFragment = EventFragment()
-//                    R.id.nav_search -> selectedFragment = SearchFragment()
+                    R.id.bottom_home -> selectedFragment =
+                        HomeFragment()
+                    R.id.bottom_events -> selectedFragment =
+                        EventFragment()
                 }
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container,

@@ -1,12 +1,13 @@
-package com.example.myapplication
+package com.example.myapplication.activities
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.myapplication.R
+import com.example.myapplication.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class EventListActivity : AppCompatActivity() {
+class MainMenuActivity : AppCompatActivity() {
     //SingleFragmentActivity() {
 /*    override fun createFragment(): Fragment {
         return EventListFragment()
@@ -30,19 +31,23 @@ class EventListActivity : AppCompatActivity() {
     }
 
     private val navListener: BottomNavigationView.OnNavigationItemSelectedListener =
-        object : BottomNavigationView.OnNavigationItemSelectedListener {
-            override fun onNavigationItemSelected(item: MenuItem): Boolean {
-                var selectedFragment: Fragment? = null
-                when (item.itemId) {
-                    R.id.bottom_home -> selectedFragment = HomeFragment()
-                    R.id.bottom_events -> selectedFragment = EventListFragment()
-                    R.id.bottom_contacts -> selectedFragment = ContactsFragment()
-                }
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container,
-                    selectedFragment!!
-                ).commit()
-                return true
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            var selectedFragment: Fragment? = null
+            when (item.itemId) {
+                R.id.bottom_home -> selectedFragment =
+                    HomeFragment()
+                R.id.bottom_events -> selectedFragment =
+                    //EventActualListFragment()
+                    EventsTabsHolder()
+                R.id.bottom_contacts -> selectedFragment =
+                    ContactsFragment()
+                R.id.bottom_menu -> selectedFragment =
+                    MenuFragment()
             }
+            supportFragmentManager.beginTransaction().replace(
+                R.id.fragment_container,
+                selectedFragment!!
+            ).commit()
+            true
         }
 }

@@ -9,9 +9,23 @@
     <string name="map">Мы на карте:</string>
     <string name="coordinates">60.378265, 93.031372</string>
 
+    <string name="our_address">Наш адрес:</string>
+    <string name="address">ул. Советская 7, п. Северо-Енисейский</string>
+    <string name="address2">Красноярский край</string>
+
     <string name="administration">Администрация:</string>
     <string name="email_administration">adm@mcaurum.ru</string>
 
     <string name="support">Техническая поддержка:</string>
     <string name="email_itsupport">itsupport@mcaurum.ru</string>
+
+    <string name="phone_number">Наш телефон: </string>
+    <string name="our_phone_number">+73916021930</string>
+
+    <!-- МЕНЮ-->
+        <!--НИЖНЕЕ МЕНЮ res/menu/bottom_menu.xml-->
+            <string name="home_bottomMenu">Главная</string>
+            <string name="events_bottomMenu">События</string>
+            <string name="contacts_bottomMenu">Контакты</string>
+            <string name="menu_bottomMenu">Меню</string>
 </resources>

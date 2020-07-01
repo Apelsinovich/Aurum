@@ -3,3 +3,4 @@
     <item android:drawable="@drawable/ic_contacts" android:state_checked="false"/>
     <item android:drawable="@drawable/ic_contacts_active" android:state_checked="true"/>
 </selector>
+

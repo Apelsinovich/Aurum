@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:scrollbars="vertical"
     android:background="#88CECECE"
     android:orientation="vertical">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         style="@style/CardView.Light"
-        app:cardCornerRadius="10dp"
-        >
+        app:cardCornerRadius="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,6 +22,13 @@
             android:padding="10dp"
             android:orientation="vertical"
             android:layout_margin="0dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#88888888"
+                android:layout_marginTop="8dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,14 +66,20 @@
 
         </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#88888888"
+                android:layout_marginTop="8dp" />
 
             <TextView
                 android:id="@+id/tvEventInfo"
+                android:text="Test text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginStart="18dp"
-                android:layout_marginLeft="18dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
                 android:layout_marginTop="8dp"/>
 
             <LinearLayout
@@ -75,35 +88,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:orientation="vertical"
-                android:visibility="gone"
-                >
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tvEventdetailedInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginLeft="18dp" />
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="4dp" />
 
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#88888888"
-                android:layout_marginTop="15dp"
-                />
+
             <Button
                 android:id="@+id/expandBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="EXPAND"
+                android:layout_height="20dp"
+                android:text="Expand"
                 android:textColor="#6200EA"
                 android:background="@drawable/ripple_effect"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp" />
+                android:layout_marginLeft="4dp"
+                android:textAllCaps="false"/>
 
         </LinearLayout>
 
