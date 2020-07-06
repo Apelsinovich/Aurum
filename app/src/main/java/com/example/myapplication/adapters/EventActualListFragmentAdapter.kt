@@ -16,7 +16,7 @@ class EventActualListFragmentAdapter internal constructor(
     //private var context: Context,
     private var data: ArrayList<Event>
 ) :
-    RecyclerView.Adapter<com.example.myapplication.adapters.EventActualListFragmentAdapter.ViewHolder>() {
+    RecyclerView.Adapter<EventActualListFragmentAdapter.ViewHolder>() {
     private val buttonNameExpanded: String = "Подробнее"
     private val buttonNameNotExpanded: String = "Скрыть"
 
@@ -36,7 +36,7 @@ class EventActualListFragmentAdapter internal constructor(
         position: Int
     ) {
         val event = data[position]
-        holder.caption.text = event.caption
+        holder.caption.text = event.title
         holder.info.text = event.info
         //holder.image.setImageDrawable(event.image)
         holder.detailedInfo.text = event.detailedInfo

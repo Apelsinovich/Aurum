@@ -1,0 +1,20 @@
+Как посмотреть созданную БД SQL Lite в Anroid Studio? Ведь Android Device Monitor was deprecated
+
+Android Device Monitor was deprecated in Android Studio 3.1 and removed from Android Studio 3.2. 
+Now You can view on-device files with Device File Explorer.
+In Android Studio Menu;
+1. View 
+2. Tool Windows 
+3. Device File Explorer button
+4. Select a device from the drop down list
+5. Use these folders : data/data/your_app_name/databases/ as per the requirements
+6. Note that, data files for your app are stored on internal storage
+7. Use DB Browser for SQLite Extenstion.
+
+====
+
+Через что открыть файд SQL Lite .db?
+
+Скачать браузер DB Browser for SQLite
+
+====

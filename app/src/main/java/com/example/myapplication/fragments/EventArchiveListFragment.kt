@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapters.EventArchiveListFragmentAdapter
 import com.example.myapplication.models.Event
+import java.util.*
+import kotlin.collections.ArrayList
 
 class EventArchiveListFragment : Fragment() {
 
@@ -29,6 +31,7 @@ class EventArchiveListFragment : Fragment() {
 
         arrayOfEvents.add(
             Event(
+                1,
                 "АРХИВНОЕ СОБЫТИЕ НОМЕР 1",
                 "8 июня - 20 июня",
                 "Отличное событие и подарки хорошие"
@@ -36,6 +39,7 @@ class EventArchiveListFragment : Fragment() {
         )
         arrayOfEvents.add(
             Event(
+                2,
                 "АРХИВНОЕ СОБЫТИЕ 2",
                 "1 июля",
                 "Приходите, будет весело"
@@ -43,6 +47,7 @@ class EventArchiveListFragment : Fragment() {
         )
         arrayOfEvents.add(
             Event(
+                3,
                 "АРХИВНОЕ СОБЫТИЕ 3",
                 "21 июля",
                 "День рождения, 30 лет как ни крути"
@@ -50,6 +55,7 @@ class EventArchiveListFragment : Fragment() {
         )
         arrayOfEvents.add(
             Event(
+                4,
                 "АРХИВНОЕ СОБЫТИЕ 4",
                 "16 августа",
                 "qОсень, скоро осень"
@@ -57,6 +63,7 @@ class EventArchiveListFragment : Fragment() {
         )
         arrayOfEvents.add(
             Event(
+                5,
                 "АРХИВНОЕ СОБЫТИЕ 5",
                 "qasdf",
                 "qasdfa"

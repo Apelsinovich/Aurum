@@ -36,7 +36,7 @@ class EventArchiveListFragmentAdapter internal constructor(
         position: Int
     ) {
         val event = data[position]
-        holder.caption.text = event.caption
+        holder.caption.text = event.title
         holder.info.text = event.info
         //holder.image.setImageDrawable(event.image)
         holder.detailedInfo.text = event.detailedInfo

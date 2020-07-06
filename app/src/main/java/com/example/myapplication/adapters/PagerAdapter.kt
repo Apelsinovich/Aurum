@@ -7,8 +7,9 @@ import com.example.myapplication.fragments.EventArchiveListFragment
 
 class PagerAdapter internal constructor (
     val fragment: Fragment,
-    val tabsCount: Int
+    private val tabsCount: Int
 ) : FragmentStateAdapter(fragment) {
+
     override fun getItemCount(): Int = tabsCount
 
     override fun createFragment(position: Int): Fragment{

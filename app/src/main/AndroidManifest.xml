@@ -27,13 +27,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity">
-<!--            <intent-filter>
+<!--        <activity android:name=".activities.MainActivity">
+&lt;!&ndash;            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>-->
-        </activity>
+            </intent-filter>&ndash;&gt;
+        </activity>-->
     </application>
 
 </manifest>
