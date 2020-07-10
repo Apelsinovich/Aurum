@@ -19,6 +19,11 @@
         android:title="@string/contacts_bottomMenu"/>
 
     <item
+        android:id="@+id/bottom_weather"
+        android:icon="@drawable/weather_selector"
+        android:title="Погода"/>
+
+    <item
         android:id="@+id/bottom_menu"
         android:icon="@drawable/menu_selector"
         android:title="@string/menu_bottomMenu" />

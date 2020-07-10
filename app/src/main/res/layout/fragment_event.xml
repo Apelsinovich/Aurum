@@ -6,81 +6,109 @@
     android:layout_height="wrap_content"
     android:scrollbars="vertical"
     android:background="#88CECECE"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="0dp"
+    android:padding="0dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        style="@style/CardView.Light"
-        app:cardCornerRadius="5dp">
+        android:layout_margin="0dp"
+        style="@style/CardView.Light">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:orientation="vertical"
-            android:layout_margin="0dp">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#88888888"
-                android:layout_marginTop="8dp" />
+            android:padding="5dp"
+            android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="2dp">
 
-            <TextView
-                android:id="@+id/tvEventCaption"
-                android:text="14 июля"
-                android:layout_width="245dp"
-                android:layout_height="130dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:layout_gravity="start"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="0dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvEventCaption"
+                    android:text="14 июля"
+                    android:layout_width="245dp"
+                    android:layout_height="100dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_event_date"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tvEventInfo"
+                        android:text="20.09.2020"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_event_place"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tvEventPlace"
+                        android:text="п.Северо-Енисейскй"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="5dp"
                 android:layout_height="match_parent"
-                />
-            <!--           <View
-                           android:layout_width="match_parent"
-                           android:layout_height="0.5dp"
-                           android:background="#88888888"
-                           android:layout_marginTop="15dp"
-                           />-->
+                android:layout_marginRight="5dp" />
 
             <ImageView
                 android:id="@+id/ivEventImage"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_gravity="right"
-                android:src="@drawable/ev1" />
+                android:layout_gravity="center"
+                android:src="@drawable/ev1"
+                android:padding="0dp"
+                android:layout_margin="0dp"/>
 
         </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#88888888"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/tvEventInfo"
-                android:text="Test text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="8dp"/>
 
             <LinearLayout
                 android:id="@+id/expandEvent"
@@ -111,9 +139,14 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:visibility="gone"/>
 
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#88888888"/>
 
     </androidx.cardview.widget.CardView>
 

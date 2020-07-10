@@ -54,6 +54,8 @@ class MainMenuActivity : AppCompatActivity() {
                     ContactsFragment()
                 R.id.bottom_menu -> selectedFragment =
                     MenuFragment()
+                R.id.bottom_weather -> selectedFragment =
+                    WeatherFragment()
             }
             supportFragmentManager.beginTransaction().replace(
                 R.id.fragment_container,

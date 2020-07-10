@@ -21,7 +21,7 @@ class EventFactory(context: Context?) {
     }
 
     fun getEvents(): List<Event> {
-        
+
         var events: MutableList<Event> = ArrayList()
         var cursor: EventCursorWrapper = queryEvents(null, null)
 
