@@ -1,4 +1,4 @@
-package com.example.myapplication.fragments
+package com.example.myapplication.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapters.EventArchiveListFragmentAdapter
 import com.example.myapplication.models.Event
-import java.util.*
 import kotlin.collections.ArrayList
 
 class EventArchiveListFragment : Fragment() {

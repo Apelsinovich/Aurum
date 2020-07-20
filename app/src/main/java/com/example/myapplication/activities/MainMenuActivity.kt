@@ -1,13 +1,10 @@
 package com.example.myapplication.activities
 
-import android.content.Context
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
-import com.example.myapplication.fragments.*
-import com.example.myapplication.sql.EventBaseHelper
+import com.example.myapplication.ui.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainMenuActivity : AppCompatActivity() {

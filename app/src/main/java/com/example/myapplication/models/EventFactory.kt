@@ -8,17 +8,25 @@ import com.example.myapplication.sql.EventBaseHelper
 import com.example.myapplication.sql.EventCursorWrapper
 import com.example.myapplication.sql.EventDbSchema
 
+/*
+* Класс работающий с событиями Event из БД SQLite.
+*
+* */
+
 class EventFactory(context: Context?) {
 
     private val mContext: Context = context!!.applicationContext
     private val mDataBase: SQLiteDatabase = EventBaseHelper(mContext).writableDatabase
 
+    // Задел на будущее - добавлять события в ручную
     fun addEvent(e: Event) {
 
         val values: ContentValues = getContentValues(e)
         mDataBase.insert(EventDbSchema.EventTable.NAME, null, values)
 
     }
+
+    // получить события Event из БД и запись в массив, с которым работаем
 
     fun getEvents(): List<Event> {
 
@@ -42,7 +50,7 @@ class EventFactory(context: Context?) {
 
     private fun getContentValues(event: Event): ContentValues {
 
-        val values: ContentValues = ContentValues()
+        val values = ContentValues()
 
         values.put(EventDbSchema.EventTable.Cols.UUID, event.id.toString())
         values.put(EventDbSchema.EventTable.Cols.TITLE, event.title)

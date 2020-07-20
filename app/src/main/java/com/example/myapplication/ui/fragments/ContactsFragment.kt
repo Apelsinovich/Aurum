@@ -1,4 +1,4 @@
-package com.example.myapplication.fragments
+package com.example.myapplication.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 
 
-class MenuFragment : Fragment() {
+class ContactsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_menu, container, false)
+        return inflater.inflate(R.layout.fragment_contacts, container, false)
     }
 }
