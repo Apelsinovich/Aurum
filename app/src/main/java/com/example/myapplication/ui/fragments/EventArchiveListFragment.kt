@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapters.EventArchiveListFragmentAdapter
 import com.example.myapplication.models.Event
+import com.example.myapplication.models.EventFactory
 import kotlin.collections.ArrayList
 
 class EventArchiveListFragment : Fragment() {
@@ -26,48 +27,18 @@ class EventArchiveListFragment : Fragment() {
         val eventRecyclerView: RecyclerView = v!!.findViewById(R.id.event_recycler_view)
         eventRecyclerView.layoutManager = LinearLayoutManager(activity)
 
+        val eventFactory: EventFactory = EventFactory(context)
+        val events: List<Event> = eventFactory.getEvents()
+            //вынести реализацию проверки
+        events.forEach{
+            if (it.STATUS != "1") {
+                arrayOfEvents.add(it)
+            }
+        }
+
         //Заменить на класс,в котором создастся список
 
-        arrayOfEvents.add(
-            Event(
-                1,
-                "АРХИВНОЕ СОБЫТИЕ НОМЕР 1",
-                "8 июня - 20 июня",
-                "Отличное событие и подарки хорошие"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                2,
-                "АРХИВНОЕ СОБЫТИЕ 2",
-                "1 июля",
-                "Приходите, будет весело"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                3,
-                "АРХИВНОЕ СОБЫТИЕ 3",
-                "21 июля",
-                "День рождения, 30 лет как ни крути"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                4,
-                "АРХИВНОЕ СОБЫТИЕ 4",
-                "16 августа",
-                "qОсень, скоро осень"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                5,
-                "АРХИВНОЕ СОБЫТИЕ 5",
-                "qasdf",
-                "qasdfa"
-            )
-        )
+
         eventArchiveListFragmentAdapter = EventArchiveListFragmentAdapter(arrayOfEvents)
         eventRecyclerView.adapter = eventArchiveListFragmentAdapter
         return v

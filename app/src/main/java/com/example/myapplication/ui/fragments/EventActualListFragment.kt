@@ -28,52 +28,14 @@ class EventActualListFragment : Fragment() {
 
         val eventFactory: EventFactory = EventFactory(context)
         val events: List<Event> = eventFactory.getEvents()
+        // обработать что новостей нет, например инициализировать сразу пустым кард вью
 
-        arrayOfEvents = events as ArrayList<Event>
+        events.forEach{
+            if (it.STATUS == "1") {
+                arrayOfEvents.add(it)
+            }
+        }
 
-        //Заменить на класс,в котором создастся список
-
-/*        arrayOfEvents.add(
-            Event(
-                1,
-                "Флешмоб \"#БытьМамойЭто\"\n" +
-                        "Что такое быть мамой и какие горизонты нам открывает материнство?",
-                "8 июня - 20 июня",
-                "Отличное событие и подарки хорошие"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                2,
-                "Событие номер 2",
-                "1 июля",
-                "Приходите, будет весело"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                3,
-                "Собыьтие номер 3",
-                "21 июля",
-                "День рождения, 30 лет как ни крути"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                4,
-                "Событие номер 4",
-                "16 августа",
-                "qОсень, скоро осень"
-            )
-        )
-        arrayOfEvents.add(
-            Event(
-                5,
-                "qwertdfdfdsfy222",
-                "qasdf",
-                "qasdfa"
-            )
-        )*/
         eventActualListFragmentAdapter = EventActualListFragmentAdapter(arrayOfEvents)
         eventRecyclerView.adapter = eventActualListFragmentAdapter
         return v

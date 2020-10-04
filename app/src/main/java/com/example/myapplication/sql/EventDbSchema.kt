@@ -1,6 +1,6 @@
 package com.example.myapplication.sql
 
-//Схема БД
+//????? ??
 class EventDbSchema {
 
     class EventTable {
@@ -10,11 +10,12 @@ class EventDbSchema {
 
         class Cols {
             companion object {
-                const val UUID = "uuid"         //id
-                const val TITLE = "title"       //title
-                const val INFO = "info"         //info
-                const val DATE = "date"         //detailtInfo временно
-                const val STATUS = "actual"     //actual actual
+                val UUID = EventEnum.UUID
+                val TITLE = EventEnum.TITLE
+                val INFO = EventEnum.INFO
+                val DATE = EventEnum.DATE
+                val PLACE = EventEnum.PLACE
+                val STATUS = EventEnum.STATUS
             }
         }
     }

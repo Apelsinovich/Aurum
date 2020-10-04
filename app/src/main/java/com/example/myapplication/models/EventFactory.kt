@@ -44,7 +44,7 @@ class EventFactory(context: Context?) {
         return events
     }
 
-    fun getEvent(id: Int): Event? { return null }
+    //fun getEvent(id: Int): Event? { return null }
 
     //Запись иобновление баз данных осуществляются спомощью класса ContentValues
 
@@ -52,23 +52,25 @@ class EventFactory(context: Context?) {
 
         val values = ContentValues()
 
-        values.put(EventDbSchema.EventTable.Cols.UUID, event.id.toString())
-        values.put(EventDbSchema.EventTable.Cols.TITLE, event.title)
-        values.put(EventDbSchema.EventTable.Cols.INFO, event.info)
-        values.put(EventDbSchema.EventTable.Cols.DATE, event.detailedInfo)
-        values.put(EventDbSchema.EventTable.Cols.UUID, event.toString())
+        values.put(EventDbSchema.EventTable.Cols.UUID.value, event.UUID.toString())
+        values.put(EventDbSchema.EventTable.Cols.TITLE.value, event.TITLE)
+        values.put(EventDbSchema.EventTable.Cols.INFO.value, event.INFO)
+        values.put(EventDbSchema.EventTable.Cols.DATE.value, event.DATE)
+        values.put(EventDbSchema.EventTable.Cols.PLACE.value, event.PLACE)
+ //       values.put(EventDbSchema.EventTable.Cols.UUID, event.toString())
+
 
         return values
 
     }
 
     fun updateEvent(event: Event) {
-        val uuidString = event.id.toString()
+        val uuidString = event.UUID.toString()
         val values: ContentValues = getContentValues(event)
 
         mDataBase.update(
             EventDbSchema.EventTable.NAME, values,
-            EventDbSchema.EventTable.Cols.UUID + " = ?", arrayOf(uuidString)
+            EventDbSchema.EventTable.Cols.UUID.value + " = ?", arrayOf(uuidString)
         )
     }
 
@@ -84,7 +86,6 @@ class EventFactory(context: Context?) {
         )
         return EventCursorWrapper(cursor)
     }
-
 }
 
     //private val mContext: Context = context.applicationContext,

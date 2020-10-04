@@ -33,7 +33,9 @@ class MainMenuActivity : AppCompatActivity() {
        if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().replace(
                 R.id.fragment_container,
-                HomeFragment()
+//              HomeFragment()
+                EventsTabsHolder()
+
             ).commit()
         }
     }
@@ -42,17 +44,17 @@ class MainMenuActivity : AppCompatActivity() {
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment? = null
             when (item.itemId) {
-                R.id.bottom_home -> selectedFragment =
-                    HomeFragment()
+//                R.id.bottom_home -> selectedFragment =
+//                    HomeFragment()
                 R.id.bottom_events -> selectedFragment =
                     //EventActualListFragment()
                     EventsTabsHolder()
-                R.id.bottom_contacts -> selectedFragment =
-                    ContactsFragment()
-                R.id.bottom_menu -> selectedFragment =
-                    MenuFragment()
-                R.id.bottom_weather -> selectedFragment =
-                    WeatherFragment()
+//                R.id.bottom_contacts -> selectedFragment =
+//                    ContactsFragment()
+//                R.id.bottom_menu -> selectedFragment =
+//                    MenuFragment()
+//                R.id.bottom_weather -> selectedFragment =
+//                    WeatherFragment()
             }
             supportFragmentManager.beginTransaction().replace(
                 R.id.fragment_container,

@@ -36,10 +36,9 @@ class EventActualListFragmentAdapter internal constructor(
         position: Int
     ) {
         val event = data[position]
-        holder.caption.text = event.title
-        holder.info.text = event.info
-        //holder.image.setImageDrawable(event.image)
-        holder.detailedInfo.text = event.detailedInfo
+        holder.eventTitle.text = event.TITLE
+        holder.eventDate.text = event.DATE
+        holder.eventPlace.text = event.PLACE
         ////////////////////////
         //Ниже код связан с раскрытием CardView
         val isExpanded: Boolean = data[position].expanded
@@ -53,8 +52,6 @@ class EventActualListFragmentAdapter internal constructor(
             holder.eventButton.text = buttonNameExpanded
             holder.eventExpandableLayer.visibility = View.GONE
         }
-
-
     }
 
     // total number of rows
@@ -65,14 +62,18 @@ class EventActualListFragmentAdapter internal constructor(
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
         //super(itemView)
-        var caption: TextView = itemView.tvEventCaption
-        var info: TextView = itemView.tvEventInfo
-       // var ivEventDate: ImageView = itemView.findViewById(R.id.ivEvent_photo)
+        var eventTitle: TextView = itemView.tvEventTitle
+        var eventDate: TextView = itemView.tvEventDate
+        var eventPlace: TextView = itemView.tvEventPlace
+
         var image: ImageView = itemView.findViewById(R.id.ivEventImage)
-        var detailedInfo: TextView = itemView.tvEventdetailedInfo
-        //var tvEventExpand_info: TextView = itemView.tvEventExpand_info
+
         var eventButton: Button = itemView.findViewById(R.id.expandBtn)
         var eventExpandableLayer: LinearLayout = itemView.findViewById(R.id.expandEvent)
+
+        //var ivEventDate: ImageView = itemView.findViewById(R.id.ivEvent_photo)
+        //var detailedInfo: TextView = itemView.tvEventdetailedInfo
+        //var tvEventExpand_info: TextView = itemView.tvEventExpand_info
 
         init {
             eventButton.setOnClickListener {

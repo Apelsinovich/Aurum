@@ -20,6 +20,7 @@ class EventBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
                 EventDbSchema.EventTable.Cols.TITLE + ", " +
                 EventDbSchema.EventTable.Cols.INFO + ", " +
                 EventDbSchema.EventTable.Cols.DATE + ", " +
+                EventDbSchema.EventTable.Cols.PLACE + ", " +
                 EventDbSchema.EventTable.Cols.STATUS +
                 ")"
         )
@@ -28,6 +29,4 @@ class EventBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
     }
-
-
 }

@@ -35,7 +35,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvEventCaption"
+                    android:id="@+id/tvEventTitle"
                     android:text="14 июля"
                     android:layout_width="245dp"
                     android:layout_height="100dp"
@@ -58,7 +58,7 @@
                         android:layout_gravity="center"/>
 
                     <TextView
-                        android:id="@+id/tvEventInfo"
+                        android:id="@+id/tvEventDate"
                         android:text="20.09.2020"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
