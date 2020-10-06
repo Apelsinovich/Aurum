@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.models.Event
 import com.example.myapplication.R
 import kotlinx.android.synthetic.main.fragment_event.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class EventArchiveListFragmentAdapter internal constructor(
     //private var context: Context,

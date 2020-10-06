@@ -10,12 +10,12 @@ class EventDbSchema {
 
         class Cols {
             companion object {
-                val UUID = EventEnum.UUID
-                val TITLE = EventEnum.TITLE
-                val INFO = EventEnum.INFO
-                val DATE = EventEnum.DATE
-                val PLACE = EventEnum.PLACE
-                val STATUS = EventEnum.STATUS
+                val UUID = EventEnum.UUID.value
+                val TITLE = EventEnum.TITLE.value
+                val INFO = EventEnum.INFO.value
+                val DATE = EventEnum.DATE.value
+                val PLACE = EventEnum.PLACE.value
+                val STATUS = EventEnum.STATUS.value
             }
         }
     }

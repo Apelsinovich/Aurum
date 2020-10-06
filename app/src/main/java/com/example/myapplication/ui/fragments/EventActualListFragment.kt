@@ -26,16 +26,15 @@ class EventActualListFragment : Fragment() {
         val eventRecyclerView: RecyclerView = v!!.findViewById(R.id.event_recycler_view)
         eventRecyclerView.layoutManager = LinearLayoutManager(activity)
 
-        val eventFactory: EventFactory = EventFactory(context)
+        val eventFactory = EventFactory(context)
         val events: List<Event> = eventFactory.getEvents()
-        // обработать что новостей нет, например инициализировать сразу пустым кард вью
-
+        // TODO обработать что новостей нет, например инициализировать сразу пустым кард вью
+        // TODO вывести логику проверки на актуальность событий во внешний класс менеджер + проверить не создается ли лишний раз список событий
         events.forEach{
-            if (it.STATUS == "1") {
+            if (it.isActual) {
                 arrayOfEvents.add(it)
             }
         }
-
         eventActualListFragmentAdapter = EventActualListFragmentAdapter(arrayOfEvents)
         eventRecyclerView.adapter = eventActualListFragmentAdapter
         return v
