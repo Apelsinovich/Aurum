@@ -1,5 +1,7 @@
 package com.example.myapplication.adapters
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,15 +9,20 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.models.Event
 import com.example.myapplication.R
+import com.example.myapplication.activities.EventActivity
+import com.example.myapplication.activities.MainMenuActivity
+import com.example.myapplication.activities.SplashScreen
+import com.example.myapplication.models.Event
+import com.example.myapplication.ui.fragments.EventActualListFragment
+import com.example.myapplication.ui.fragments.EventFragment
 import kotlinx.android.synthetic.main.fragment_event.view.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 class EventActualListFragmentAdapter internal constructor(
-    //private var context: Context,
+    private var context: Context?,
     private var data: ArrayList<Event>
 ) :
     RecyclerView.Adapter<EventActualListFragmentAdapter.ViewHolder>() {
@@ -27,7 +34,11 @@ class EventActualListFragmentAdapter internal constructor(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.fragment_event, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(
+            R.layout.fragment_event,
+            parent,
+            false
+        )
         return ViewHolder(view)
     }
 
@@ -62,7 +73,7 @@ class EventActualListFragmentAdapter internal constructor(
     }
 
     // stores and recycles views as they are scrolled off screen
-    inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //super(itemView)
         var eventTitle: TextView = itemView.tvEventTitle
         var eventDate: TextView = itemView.tvEventDate
@@ -73,15 +84,21 @@ class EventActualListFragmentAdapter internal constructor(
         var eventButton: Button = itemView.findViewById(R.id.expandBtn)
         var eventExpandableLayer: LinearLayout = itemView.findViewById(R.id.expandEvent)
 
+        var eventCardView: CardView = itemView.findViewById(R.id.cardEvent)
+
         //var ivEventDate: ImageView = itemView.findViewById(R.id.ivEvent_photo)
         //var detailedInfo: TextView = itemView.tvEventdetailedInfo
         //var tvEventExpand_info: TextView = itemView.tvEventExpand_info
 
         init {
-            eventButton.setOnClickListener {
+            eventCardView.setOnClickListener {
                 val event: Event = data[adapterPosition]
                 event.expanded = !event.expanded
                 notifyItemChanged(adapterPosition)
+
+                var intent = Intent(context, EventActivity::class.java)
+                context!!.startActivity(intent)
+
             }
         }
     }

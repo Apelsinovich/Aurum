@@ -4,7 +4,13 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+//TODO дописать логику - update
+//TODO решить как загружать предзаполненную бд при установке приложения на физическом девайсе
+//TODO БОЛЬШАЯ ЗАДАЧА - реализовать синхронизацию с БД на сервере, где Серега через web интерфейс будет добавлять события центра
+//TODO что по геолокации?
+
 class EventBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
 
     //Прочитать про эту магию
     companion object {

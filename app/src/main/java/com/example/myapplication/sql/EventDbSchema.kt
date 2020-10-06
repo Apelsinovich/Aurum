@@ -1,6 +1,7 @@
 package com.example.myapplication.sql
 
-//????? ??
+//TODO решить, как хранить картинки
+//TODO решить, как хранить дополнительную информацию о событии (в этой же таблице или сделать отдельную с доступом по ID события)
 class EventDbSchema {
 
     class EventTable {

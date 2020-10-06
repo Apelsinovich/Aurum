@@ -12,7 +12,7 @@ import com.example.myapplication.adapters.EventActualListFragmentAdapter
 import com.example.myapplication.models.Event
 import com.example.myapplication.models.EventFactory
 
-class EventActualListFragment : Fragment() {
+class EventActualListFragment : Fragment(){
 
     private var arrayOfEvents: ArrayList<Event> = ArrayList()
     private lateinit var eventActualListFragmentAdapter: EventActualListFragmentAdapter
@@ -35,8 +35,9 @@ class EventActualListFragment : Fragment() {
                 arrayOfEvents.add(it)
             }
         }
-        eventActualListFragmentAdapter = EventActualListFragmentAdapter(arrayOfEvents)
+        eventActualListFragmentAdapter = EventActualListFragmentAdapter(context, arrayOfEvents)
         eventRecyclerView.adapter = eventActualListFragmentAdapter
         return v
     }
+
 }

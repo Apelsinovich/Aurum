@@ -22,7 +22,7 @@
 
         android:networkSecurityConfig="@xml/network_security_config">
 
-        <!--<activity android:name=".EventsActivity"></activity>-->
+        <activity android:name=".activities.EventActivity"></activity>
         <activity
             android:name=".activities.SplashScreen"
             android:theme="@style/SplashTheme">
