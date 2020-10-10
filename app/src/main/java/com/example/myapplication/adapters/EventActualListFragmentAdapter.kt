@@ -1,5 +1,6 @@
 package com.example.myapplication.adapters
 
+import android.content.ClipData.newIntent
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -88,19 +89,27 @@ class EventActualListFragmentAdapter internal constructor(
 
         //var ivEventDate: ImageView = itemView.findViewById(R.id.ivEvent_photo)
         //var detailedInfo: TextView = itemView.tvEventdetailedInfo
-        //var tvEventExpand_info: TextView = itemView.tvEventExpand_info
+        //var tvEventExpand_info: TextView = itemVieww  .tvEventExpand_info
+
 
         init {
+
             eventCardView.setOnClickListener {
-                val event: Event = data[adapterPosition]
-                event.expanded = !event.expanded
-                notifyItemChanged(adapterPosition)
+                val event = data[adapterPosition]
+//                event.expanded = !event.expanded
+//                notifyItemChanged(adapterPosition)
 
+//                // передаем в бандл интента (ассоциативный массив) айди события
                 var intent = Intent(context, EventActivity::class.java)
-                context!!.startActivity(intent)
+               // intent.putExtra("eventUUID", event.UUID)
+                intent.putExtra("eventTitle", event.TITLE)
+                intent.putExtra("eventDetailInfo", event.DETAILINFO)
+                intent.putExtra("eventDate", event.DATE)
+                intent.putExtra("eventPlace", event.PLACE)
 
+
+                context!!.startActivity(intent)
             }
         }
     }
-
 }

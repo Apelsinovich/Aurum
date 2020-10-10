@@ -25,6 +25,7 @@ class EventBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
                 EventDbSchema.EventTable.Cols.UUID + ", " +
                 EventDbSchema.EventTable.Cols.TITLE + ", " +
                 EventDbSchema.EventTable.Cols.INFO + ", " +
+                EventDbSchema.EventTable.Cols.DETAILINFO + ", " +
                 EventDbSchema.EventTable.Cols.DATE + ", " +
                 EventDbSchema.EventTable.Cols.PLACE + ", " +
                 EventDbSchema.EventTable.Cols.STATUS +
