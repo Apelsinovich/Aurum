@@ -3,6 +3,7 @@ package com.example.myapplication.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toolbar
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -22,9 +23,22 @@ class EventActivity: AppCompatActivity(){
 
         //supportActionBar?.hide()
 //TODO подумать над заменой на toolBar и как вернукться назад в активити + как листать фрагменты
-        val actionBar: ActionBar? = supportActionBar
-        //actionBar?.setHomeButtonEnabled(true)
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+       val toolbar: Toolbar
+
+
+        //магия в купе с override fun onSupportNavigateUp()
+        val actionBar = supportActionBar
+        actionBar!!.title = "Назад"
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
+        //не работает (
+        actionBar!!.setIcon(R.drawable.ic_home_active)
+
+
+
+
+
+
 
 
         val eventTitle= intent.extras!!.getString("eventTitle")
@@ -55,9 +69,9 @@ class EventActivity: AppCompatActivity(){
 
     }
 
-//    public fun newIntent(context: Context, uuid: Int) {
-//        intent = Intent(context, EventActivity::class.java)
-//        intent.putExtra("extra_uuid", uuid)
-//    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }
 
