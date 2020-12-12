@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">МЦ Аурум</string>
     <!--Нижнее меню-->
-    <string name="home">Home</string>
+    <string name="clubs">Секции</string>
     <string name="contacts">Контакты</string>
     <!--Контакты-->
     <string name="choice_social">Свяжитесь с нами удобным способом:</string>
@@ -24,8 +24,9 @@
 
     <!-- МЕНЮ-->
         <!--НИЖНЕЕ МЕНЮ res/menu/bottom_menu.xml-->
-            <string name="home_bottomMenu">Главная</string>
+            <string name="clubs_bottomMenu">Секции</string>
             <string name="events_bottomMenu">События</string>
             <string name="contacts_bottomMenu">Контакты</string>
             <string name="menu_bottomMenu">Меню</string>
+            <string name="profile_bottomMenu">Профиль</string>
 </resources>

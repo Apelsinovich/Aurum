@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.example.aurum_yc">
 
     <!--Allows the app to create network sockets and use custom network protocols.
      The browser and other applications provide means to send data to the internet,
@@ -9,9 +9,8 @@
     <!--Allows the app to view information about network connections such as which networks exist and are connected.-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-    <!--.ForecastApplication  -->
+
     <application
-        android:name=".ForecastApplication"
 
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -22,9 +21,11 @@
 
         android:networkSecurityConfig="@xml/network_security_config">
 
-        <activity android:name=".activities.EventActivity"></activity>
+        <activity android:name="com.example.aurum_yc.activities.EventActivity"></activity>
+        <activity android:name="com.example.aurum_yc.activities.LoginActivity"></activity>
+
         <activity
-            android:name=".activities.SplashScreen"
+            android:name="com.example.aurum_yc.activities.SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +33,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainMenuActivity">
+
+        <activity android:name="com.example.aurum_yc.MainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

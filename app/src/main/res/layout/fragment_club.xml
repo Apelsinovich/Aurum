@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical"
+    android:background="#88CECECE"
+    android:orientation="vertical"
+    android:layout_margin="0dp"
+    android:padding="0dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardClub"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="0dp"
+        style="@style/CardView.Light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/ivEventImage"
+                android:layout_width="325dp"
+                android:layout_height="325dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ev3"
+                android:padding="0dp"
+                android:layout_margin="0dp"/>
+
+            <TextView
+                android:id="@+id/tvClubTitle"
+                android:text="Длинное название секции в две строки. И даже чуть больше"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="0dp"/>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#88888888"/>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "629974162901",
+    "project_id": "aurum-1fff3",
+    "storage_bucket": "aurum-1fff3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629974162901:android:75cde4baf784e7af52b15c",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629974162901-i6dh4i4uje6sf04u955u6uequst04bl6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMgIFikDqd1Iz-MSORtgrDfM2kPKvPth0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629974162901-i6dh4i4uje6sf04u955u6uequst04bl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

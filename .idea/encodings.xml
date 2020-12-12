@@ -2,9 +2,12 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/build.gradle" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/models/EventFactory.kt" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/sql/EventCursorWrapper.kt" charset="UTF-16" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/sql/EventDbSchema.kt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/aurum_yc/db/clubs/ClubCursorWrapper.kt" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/aurum_yc/db/clubs/ClubDbSchema.kt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/aurum_yc/db/events/EventCursorWrapper.kt" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/aurum_yc/db/events/EventDbSchema.kt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/aurum_yc/models/events/EventFactory.kt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/aurum_yc/models/events/EventFactory.kt" charset="windows-1251" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
