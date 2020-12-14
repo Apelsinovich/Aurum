@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase
 import com.example.aurum_yc.db.events.EventBaseHelper
 import com.example.aurum_yc.db.events.EventCursorWrapper
 import com.example.aurum_yc.db.events.EventDbSchema
+import com.example.aurum_yc.db.events.data.Event
 import java.text.SimpleDateFormat
 import kotlin.collections.ArrayList
 

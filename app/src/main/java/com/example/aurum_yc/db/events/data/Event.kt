@@ -1,12 +1,17 @@
-package com.example.aurum_yc.models.events
+package com.example.aurum_yc.db.events.data
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 /**
  * Класс события/новости молодежного центра Аурум. Каждый объект такого класса создается динамически в классе EventsFactory
  **/
 
-class Event(
+@Entity(tableName = "events_table")
+data class Event(
 
-    val UUID: Int,                       //рандомный уникальынй ID события
+    @PrimaryKey(autoGenerate = true)
+    val UUID: Int,                      //рандомный уникальынй ID события
     var TITLE: String,                  //Заголовок новости/события
     var INFO: String,                   //Более полная информация о событии, которая изначально скрыта. По кнопке можно раскрыть в том же окне.
     var DETAILINFO: String,

@@ -10,17 +10,15 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aurum_yc.R
 import com.example.aurum_yc.activities.EventActivity
-import com.example.aurum_yc.models.events.Event
-import com.google.firebase.database.FirebaseDatabase
+import com.example.aurum_yc.db.events.data.Event
 import kotlinx.android.synthetic.main.fragment_event.view.*
 
-class EventActualListFragmentAdapter internal constructor(
-    private var context: Context?,
-    private var data: ArrayList<Event>
-) :
+class EventActualListFragmentAdapter () :
     RecyclerView.Adapter<EventActualListFragmentAdapter.ViewHolder>() {
+    //private lateinit var data: ArrayList<Event>
     private val buttonNameExpanded: String = "Подробнее"
     private val buttonNameNotExpanded: String = "Скрыть"
+    private var data = emptyList<Event>()
 
     // inflates the row layout from xml when needed
     override fun onCreateViewHolder(
@@ -76,6 +74,9 @@ class EventActualListFragmentAdapter internal constructor(
         init {
 /* Логика передачи в бандл интента (ассоциативный массив) данных выбранного события по нажатию на cardview*/
 
+
+
+
             eventCardView.setOnClickListener {
                 val event = data[adapterPosition]
 
@@ -85,15 +86,22 @@ class EventActualListFragmentAdapter internal constructor(
 //                notifyItemChanged(adapterPosition)
 
                 //todo - подумать как передавать данные  при помощи функции. Наблюдается проблема дублирования кода. Цепочка адаптер - активити - фрагмент
-                var intent = Intent(context, EventActivity::class.java)
+                var intent = Intent(it.context, EventActivity::class.java)
 
                 intent.putExtra("eventTitle", event.TITLE)
                 intent.putExtra("eventDetailInfo", event.DETAILINFO)
                 intent.putExtra("eventDate", event.DATE)
                 intent.putExtra("eventPlace", event.PLACE)
 
-                context!!.startActivity(intent)
+                it.context!!.startActivity(intent)
             }
         }
+
     }
+
+        fun setData(event: List<Event>) {
+            this.data = event as ArrayList<Event>
+            notifyDataSetChanged()
+        }
+
 }

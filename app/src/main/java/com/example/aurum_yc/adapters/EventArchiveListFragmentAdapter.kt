@@ -1,5 +1,6 @@
 package com.example.aurum_yc.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,13 +9,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aurum_yc.models.events.Event
+import com.example.aurum_yc.db.events.data.Event
 import com.example.aurum_yc.R
 import kotlinx.android.synthetic.main.fragment_event.view.*
 import kotlin.collections.ArrayList
 
 class EventArchiveListFragmentAdapter internal constructor(
-    //private var context: Context,
+    private var context: Context?,
     private var data: ArrayList<Event>
 ) :
     RecyclerView.Adapter<EventArchiveListFragmentAdapter.ViewHolder>() {

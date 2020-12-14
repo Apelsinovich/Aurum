@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aurum_yc.R
 import com.example.aurum_yc.adapters.EventArchiveListFragmentAdapter
-import com.example.aurum_yc.models.events.Event
+import com.example.aurum_yc.db.events.data.Event
 import com.example.aurum_yc.models.events.EventFactory
 import com.google.firebase.database.FirebaseDatabase
 import kotlin.collections.ArrayList
@@ -42,7 +42,7 @@ class EventArchiveListFragment : Fragment() {
                 myRef.child("event" + it.UUID).setValue(it)
             }
         }
-        eventArchiveListFragmentAdapter = EventArchiveListFragmentAdapter(arrayOfEvents)
+        eventArchiveListFragmentAdapter = EventArchiveListFragmentAdapter(context, arrayOfEvents)
         eventRecyclerView.adapter = eventArchiveListFragmentAdapter
         return v
     }
