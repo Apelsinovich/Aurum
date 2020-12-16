@@ -1,6 +1,5 @@
 package com.example.aurum_yc.fragments.events
 
-import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,27 +34,30 @@ class EventActualListFragment : Fragment(){
         val eventRecyclerView: RecyclerView = v!!.findViewById(R.id.event_recycler_view)
         var eventActualListFragmentAdapter = EventActualListFragmentAdapter()
 
-
         eventRecyclerView.adapter = eventActualListFragmentAdapter
         eventRecyclerView.layoutManager = LinearLayoutManager(activity)
 
-        val eventFactory = EventFactory(context)
+//        val eventFactory = EventFactory(context)
+//        var events: List<Event>? = eventFactory.getEvents()
 
-       // var events: List<Event>? = eventFactory.getEvents()
-
-        // ViewModel
-
+        eventActualListFragmentAdapter.setData(arrayOfEvents)
+        val database = FirebaseDatabase.getInstance("https://aurum-1fff3-default-rtdb.europe-west1.firebasedatabase.app/")
+        val myRef = database.getReference("actualEvents")
 
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
         mEventViewModel.readAllData.observe(viewLifecycleOwner, Observer {
-            eventActualListFragmentAdapter.setData(it)
+            it.forEach{
+                if (it.DATE.toLong() >= System.currentTimeMillis()) {
+                    arrayOfEvents.add(it)
+                    myRef.child("event" + it.UUID).setValue(it)
+                }
+
+            }
+            eventActualListFragmentAdapter.setData(arrayOfEvents)
         })
-
-
 
         // TODO обработать что новостей нет - написать сообщение
         // TODO вывести логику проверки на актуальность событий во внешний класс менеджер + проверить не создается ли лишний раз список событий
-
 //        events?.forEach{
 //            if (it.isActual) {
 //                arrayOfEvents.add(it)
@@ -67,10 +69,6 @@ class EventActualListFragment : Fragment(){
 //            }
 //        }
         //eventActualListFragmentAdapter = EventActualListFragmentAdapter(context, arrayOfEvents)
-
         return v
     }
-
-
-
 }

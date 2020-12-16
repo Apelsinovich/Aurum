@@ -12,6 +12,8 @@ interface EventDao{
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addEvent(event: Event)
 
-    @Query("SELECT * FROM events_table")
+    @Query("SELECT * " +
+                "FROM events_table " +
+                "ORDER BY date ASC")
     fun readAllData(): LiveData<List<Event>>
 }

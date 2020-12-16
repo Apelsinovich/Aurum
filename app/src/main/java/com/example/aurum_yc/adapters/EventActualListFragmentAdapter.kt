@@ -1,6 +1,5 @@
 package com.example.aurum_yc.adapters
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -12,12 +11,13 @@ import com.example.aurum_yc.R
 import com.example.aurum_yc.activities.EventActivity
 import com.example.aurum_yc.db.events.data.Event
 import kotlinx.android.synthetic.main.fragment_event.view.*
+import java.text.SimpleDateFormat
 
 class EventActualListFragmentAdapter () :
     RecyclerView.Adapter<EventActualListFragmentAdapter.ViewHolder>() {
-    //private lateinit var data: ArrayList<Event>
     private val buttonNameExpanded: String = "Подробнее"
     private val buttonNameNotExpanded: String = "Скрыть"
+//    прочитать про emptyList
     private var data = emptyList<Event>()
 
     // inflates the row layout from xml when needed
@@ -29,16 +29,21 @@ class EventActualListFragmentAdapter () :
         return ViewHolder(view)
     }
 
-/* Логика связывания(bind) конкретных данных с полями */
+    /* Логика связывания(bind) конкретных данных с полями */
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int
     ) {
         val event = data[position]
         holder.eventTitle.text = event.TITLE
-        holder.eventDate.text = event.DATE
-        holder.eventPlace.text = event.PLACE
 
+//        TODO вынести логику преобразования даты в model, и избавить от дублирования перевода строки в long (на данный момент, перевод в лонг происходит и в EventActualListFragment)
+        val date = event.DATE.toLong()
+        val formatExample = SimpleDateFormat("dd.MM.yyyy")
+        //event.DATE = formatExample.format(date)
+
+        holder.eventDate.text = formatExample.format(date)
+        holder.eventPlace.text = event.PLACE
 
 /*Логика раскрывабщегося события. Отключена и заменена на локику открытия отдельного события (event) в новом активити*/
 
@@ -54,28 +59,22 @@ class EventActualListFragmentAdapter () :
 //        }
     }
 
-/* Логика подсчета количества строк в recyclerview */
+    /* Логика подсчета количества строк в recyclerview */
     override fun getItemCount(): Int {
         return data.size
     }
 
-/*    Удерживание view в recyclerview + добавление новых по мере прокрутки вниз. stores and recycles views as they are scrolled off screen*/
+    /*    Удерживание view в recyclerview + добавление новых по мере прокрутки вниз. stores and recycles views as they are scrolled off screen*/
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val eventTitle: TextView = itemView.tvEventTitle
         val eventDate: TextView = itemView.tvEventDate
         val eventPlace: TextView = itemView.tvEventPlace
-//        val image: ImageView = itemView.findViewById(R.id.ivEventImage)
-//        val eventButton: Button = itemView.findViewById(R.id.expandBtn)
-//        val eventExpandableLayer: LinearLayout = itemView.findViewById(R.id.expandEvent)
 
         private val eventCardView: CardView = itemView.findViewById(R.id.cardEvent)
 
         init {
 /* Логика передачи в бандл интента (ассоциативный массив) данных выбранного события по нажатию на cardview*/
-
-
-
 
             eventCardView.setOnClickListener {
                 val event = data[adapterPosition]
@@ -98,10 +97,8 @@ class EventActualListFragmentAdapter () :
         }
 
     }
-
-        fun setData(event: List<Event>) {
-            this.data = event as ArrayList<Event>
+        fun setData(events: List<Event>) {
+            this.data = events as ArrayList<Event>
             notifyDataSetChanged()
         }
-
 }
