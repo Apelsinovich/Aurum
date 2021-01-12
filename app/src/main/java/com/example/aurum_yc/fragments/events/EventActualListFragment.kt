@@ -16,6 +16,8 @@ import com.example.aurum_yc.db.events.data.Event
 import com.example.aurum_yc.db.events.data.EventDatabase
 import com.example.aurum_yc.db.events.data.EventViewModel
 import com.example.aurum_yc.models.events.EventFactory
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -33,6 +35,15 @@ class EventActualListFragment : Fragment(){
         val v: View? = inflater.inflate(R.layout.fragment_event_actual_list, container, false)
         val eventRecyclerView: RecyclerView = v!!.findViewById(R.id.event_recycler_view)
         var eventActualListFragmentAdapter = EventActualListFragmentAdapter()
+        val fbtAddEvent: FloatingActionButton = v.findViewById(R.id.fbt_addEvent)
+        val auth = FirebaseAuth.getInstance()
+
+
+        if (auth.currentUser?.email.equals("ignatcovidov@gmail.com")) {
+            fbtAddEvent.visibility = View.VISIBLE
+        } else {
+            fbtAddEvent.visibility = View.GONE
+        }
 
         eventRecyclerView.adapter = eventActualListFragmentAdapter
         eventRecyclerView.layoutManager = LinearLayoutManager(activity)

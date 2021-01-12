@@ -1,6 +1,5 @@
 package com.example.aurum_yc.fragments.profile
 
-import android.R.attr.password
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
@@ -16,15 +15,11 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.aurum_yc.MainMenuActivity
 import com.example.aurum_yc.R
-import com.example.aurum_yc.activities.EventActivity
-import com.example.aurum_yc.activities.LoginActivity
-import com.example.aurum_yc.fragments.events.EventActualListFragment
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
-
+//https://github.com/firebase/quickstart-android/blob/master/auth/app/src/main/java/com/google/firebase/quickstart/auth/kotlin/EmailPasswordActivity.kt
 class LoginFragment: Fragment() {
 
     private lateinit var etUserEMail: EditText
@@ -109,11 +104,16 @@ class LoginFragment: Fragment() {
                     pbLogin.visibility = View.GONE
                 }
             }
+        pbLogin.visibility = View.GONE
     }
 
     private fun signOut(view: View) {
-        auth.signOut()
-        Toast.makeText(this.context, "Выход из системы успешен", Toast.LENGTH_SHORT).show()
+        if (auth.currentUser != null){
+            auth.signOut()
+            Toast.makeText(view.context, "Выход из системы успешен", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(view.context, "Пользователь уже вышел из системы", Toast.LENGTH_SHORT).show()
+        }
 //        updateUI(null)
     }
 
@@ -141,4 +141,3 @@ class LoginFragment: Fragment() {
     }
 
 }
-
